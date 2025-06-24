@@ -22,8 +22,8 @@ body{
 nav ul li a {
   position: relative;
   text-decoration: none;
-  color:var(--bg-primary); /* غيريها حسب لونك */
-  padding-bottom: 5px; /* عشان يوضح الخط */
+  color:var(--bg-primary); 
+  padding-bottom: 5px; 
 }
 
 nav ul li a::after {
@@ -33,7 +33,7 @@ nav ul li a::after {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: var(--secondry-color); /* خط اللون */
+  background-color: var(--secondry-color); 
   transition: width 0.3s ease-in-out;
 }
 
@@ -49,7 +49,6 @@ h1,h2{
   color: #ffff;
 }
 
-/* ولضمان أن الأقسام فيها تباعد جيد من الأعلى والأسفل */
 section {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -65,7 +64,7 @@ a{
   color:#ffff;
 }
 .btn-primary{
-  background-color: var(--bg-primary);
+  background-color: var(--secondry-color);
   color: white;
   padding: 8px 20px;
 
@@ -76,7 +75,7 @@ a{
   cursor: pointer;
 }
 .btn-primary:hover{
-  background-color: var(--secondry-color);
+  background-color: var(--bg-primary);
 }
 .container{
   max-width: 1100px;
@@ -99,7 +98,7 @@ header .navbar nav{
   display: flex;
   justify-content:space-between;
   align-items: center;
-  /*max-width: 1100px;*//*اقصى عرض للناف , زهما كبرت الشاشه المحتوى يبقى بالنص*/
+  /*max-width: 1100px;*/
   margin: auto;
   padding: 1.5rem 2rem;
 }
@@ -156,7 +155,7 @@ header .header-content .content-text{
     color: white;
     border: 2px solid #057947;
     border-radius: 50%;
-    margin-right:10px ;/*مسافه بين الايقونات*/
+    margin-right:10px ;
     transition: all 0.3s ease;
   }
   #home .header-content .social a i:hover{
@@ -318,61 +317,50 @@ header .header-content .content-text{
 }
 /*Services End*/
 /*Portfolio Start*/
-#portfolio {
-  background-color:var(--bg-primary);
-  padding: 30px 15px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  transition: all 0.3s ease;
+#projects-cards {
+  background-color: var(--bg-primary);
+  padding: 6rem 0;
 }
 
-/* سكشن الخاص بالزر داخل البورتفوليو */
-#portfolio1 {
+#projects-cards .row {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 4rem;
+  text-align: center;
+  column-gap: 2rem;
+  row-gap: 4rem;
+}
+
+#projects-cards .item {
   background-color: white;
-  width: 800px; 
-  height: 20px;
-  height: auto; 
-  display: block; 
-  margin: 0 auto 15px;
-  padding: 40px 15px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 30px 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0,0,0.2);
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
-/* علشان نخلي النص والزر بالنص */
-#portfolio1 .headin {
-  text-align: center;
+#projects-cards .item:hover {
+  transform: scale(1.04);
 }
 
-#portfolio1 p {
-  font-size: 18px;
-  color: rgb(7, 7, 7);
-  margin-top: 1rem;
+#projects-cards .item h3 {
+  margin: 15px;
+  color: var(--bg-primary);
 }
 
-#portfolio1 a {
-  display: inline-block;
-  margin: 1.5rem auto;
-  background-color: var(--secondry-color);
-  
-  color: white;
-  padding: 10px 20px;
+#projects-cards .item p {
+  font-size: 20px;
+  color: black;
+}
+
+#projects-cards .item img {
+  width: 100%;
+  height:auto;
+  object-fit: cover;
   border-radius: 5px;
-  font-weight: 500;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
-#portfolio1 a i {
-  margin-left: 8px;
-}
-
-#portfolio1 a:hover {
-  background-color: var(--primary-color);
-  transform: scale(1.05);
-}
 /*Portfolio End*/
 
 /*Contact Start*/
@@ -473,7 +461,6 @@ header .header-content .content-text{
     font-size: 20px;
   }
 
-  /* إظهار القائمة لما يضغط على البرقر */
   #check:checked ~ nav .menu {
     right: 0;
   }
@@ -570,3 +557,19 @@ header .header-content .content-text{
     margin-top: 0;
   }
 }
+@media (max-width: 768px) {
+  #projects-cards .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #projects-cards .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
